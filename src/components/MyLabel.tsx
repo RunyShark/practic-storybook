@@ -17,6 +17,10 @@ export interface MyLabelProps {
    * El valor por defecto de la capitalizacion es false
    */
   color: 'primary' | 'secondary' | 'tertiary';
+  /**
+   *color personalizado
+   */
+  fontColor?: string;
 }
 
 export const MyLabel = ({
@@ -24,8 +28,12 @@ export const MyLabel = ({
   size = 'normal',
   color = 'primary',
   allCaps = false,
+  fontColor,
 }: MyLabelProps) => (
-  <span className={`${size} ${`text-${color}`}`}>
-    {allCaps ? label.toLowerCase() : label}
+  <span
+    className={`label ${size} ${`text-${color}`}`}
+    style={{ color: fontColor }}
+  >
+    {allCaps ? label.toUpperCase() : label}
   </span>
 );

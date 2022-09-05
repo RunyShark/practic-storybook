@@ -4,6 +4,10 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 export default {
   title: 'UI/MyLabel',
   component: MyLabel,
+  argTypes: {
+    size: { control: 'select' },
+    color: { control: 'select' },
+  },
 } as ComponentMeta<typeof MyLabel>;
 
 const Template: ComponentStory<typeof MyLabel> = (args) => (
@@ -30,6 +34,12 @@ Secondary.args = {
 
 export const Tertiary = Template.bind({});
 Tertiary.args = {
+  size: 'normal',
+  color: 'tertiary',
+};
+
+export const CustomFontColor = Template.bind({});
+CustomFontColor.args = {
   size: 'normal',
   color: 'tertiary',
 };
